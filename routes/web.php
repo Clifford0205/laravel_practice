@@ -32,5 +32,19 @@ Route::get('/pizzas2', function () {
         ['type' => '綜合海鮮', 'base' => '大蒜', 'price' => 7],
         ['type' => '蔬菜水果', 'base' => '脆皮', 'price' => 7],
     ];
-    return view('pizzas2', ['pizzas' => $pizzas]);
+
+    //拿到網址的query ex:http://127.0.0.1:8000/pizzas2?name=Clifford&age=18
+    $name = request('name');
+
+    return view('pizzas2', [
+        'pizzas' => $pizzas,
+        'name' => $name,
+        //拿到網址的query 第二種寫法
+        'age' => request('age'),
+    ]);
+});
+
+// 在網址加入parameters
+Route::get('/pizza-detail/{id}', function ($id) {
+    return view('details', ['id' => $id]);
 });

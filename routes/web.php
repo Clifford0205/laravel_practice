@@ -48,3 +48,10 @@ Route::get('/pizzas2', function () {
 Route::get('/pizza-detail/{id}', function ($id) {
     return view('details', ['id' => $id]);
 });
+
+// 以下是把邏輯放在controller裡面
+
+Route::get('/pizzas3', 'PizzaController@index');
+
+// 在網址加入parameters
+Route::get('/pizza-detail2/{id}', 'PizzaController@show');

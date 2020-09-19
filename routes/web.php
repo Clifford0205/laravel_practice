@@ -54,11 +54,15 @@ Route::get('/pizza-detail/{id}', function ($id) {
 Route::get('/pizzas3', 'PizzaController@index');
 
 // 在網址加入parameters
-Route::get('/pizza-detail2/{id}', 'PizzaController@show');
+Route::get('/pizzas-detail2/{id}', 'PizzaController@show');
 
 
 // 連結sql
 Route::get('/pizzas_sql', 'PizzaControllerSql@index');
 
+Route::get('/pizzas_sql/create', 'PizzaControllerSql@create');
+
 Route::get('/pizzas_sql/{id}', 'PizzaControllerSql@show');
+
+
 
